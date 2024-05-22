@@ -1,0 +1,12 @@
+void main(){
+
+  dynamic a="Ved";
+
+  a ="Abhi";
+  a = 5;
+  a = 5.6;
+
+
+
+  print(a);
+}
