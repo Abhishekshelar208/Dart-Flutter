@@ -1,0 +1,16 @@
+import 'dart:io';
+
+void main() {
+  print("Enter your age: ");
+  String? input = stdin.readLineSync();
+
+  // Using null-aware operators to simplify the logic
+  int? age = int.tryParse(input ??'');
+  print("Your age is: ${age ?? 'Invalid input'}");
+
+  if(age!>18){
+    print("Vote");
+  }else{
+    print("Do not Vote");
+  }
+}
