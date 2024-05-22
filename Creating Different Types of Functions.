@@ -1,0 +1,31 @@
+void main(){
+  print("Exploring Functions in Dart");
+
+
+
+  // Calling functions one by one.
+
+  myFun();
+  displayName("Abhishek Shelar");
+  print(add());
+  print(newAdd(50,30));
+}
+
+void myFun(){
+  print("This is a Simple Function with no parameter");
+}
+
+void displayName(var name){
+  print("Name : $name");
+}
+
+int add(){
+  int a=5;
+  int b = 6;
+  int sum = a + b;
+  return sum;
+}
+
+int newAdd(int a,int b){
+  return a+b;
+}
