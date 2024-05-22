@@ -1,0 +1,38 @@
+void main(){
+
+  var myno = [10,20,30,40,50];
+
+
+  myno.add(80);
+  print(myno);
+
+  var myNames = [];
+  myNames.add("Abhi");
+
+  myNames.addAll(myno);
+  print(myNames);
+
+  myNames.insert(2, "Krishna");
+  print(myNames);
+
+  myNames.replaceRange(0, 2, [111,222,333]);
+  print(myNames);
+
+  myNames.removeRange(1, 3);
+  print(myNames);
+
+  myNames.removeAt(4);
+  print(myNames);
+
+  print("Length : ${myNames.length}");
+  print("Reversed List : ${myNames.reversed}");
+  print("First Element : ${myNames.first}");
+  print("Last Element : ${myNames.last}");
+  print("isEmpty : ${myNames.isEmpty}");
+  print("isNotEmpty : ${myNames.isNotEmpty}");
+
+
+
+
+
+}
