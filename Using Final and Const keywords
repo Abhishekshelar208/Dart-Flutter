@@ -1,0 +1,36 @@
+void main(){
+
+  const num = 55;
+
+  print(num);
+
+  final String password = "Abhishek@1234";
+
+  print(password);
+
+
+
+  final myList = [
+    "Abhi",
+    "Ved",
+    "Om"
+  ];
+
+  myList.add("Krishna");   //using final we cannot override anything but
+  //we can able to add new data in it.
+
+  print(myList);
+
+  const myList2 = [
+    "Abhi",
+    "Ved",
+    "Om"
+  ];
+
+  //myList2.add("Omkar");   //this will give error because we cannot
+  //add anything after const.
+
+  print(myList2);
+
+
+}
