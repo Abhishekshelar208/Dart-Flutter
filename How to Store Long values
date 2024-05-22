@@ -1,0 +1,18 @@
+import 'dart:io';
+
+void main() {
+  Human human = Human();
+  human.display();
+}
+
+class Human {
+  void display() {
+    int a = 5;
+    print(a);
+
+    BigInt b = BigInt.parse('12243734234723847893728947893274723472');
+    print(b);
+    b = b + BigInt.from(2);
+    print(b);
+  }
+}
