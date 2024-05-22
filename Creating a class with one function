@@ -1,0 +1,18 @@
+import 'dart:io';
+
+void main(){
+  Human human = Human();
+  human.display();
+}
+
+class Human{
+  void display(){
+    print("Welcome To Dart.");
+
+    stdout.write("Enter Your Name: ");
+
+    var name = stdin.readLineSync();
+
+    print("Welcome : $name");
+  }
+}
