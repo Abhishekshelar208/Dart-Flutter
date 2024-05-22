@@ -1,0 +1,17 @@
+void main() {
+  Human human1 = Human();          // Calls the default constructor
+  Human human2 = Human.withParams(4, 3); // Calls the parameterized constructor
+}
+
+class Human {
+  // Default constructor
+  Human() {
+    print("This is a Default Constructor.");
+  }
+
+  // Named constructor
+  Human.withParams(int a, int b) {
+    print("This is a Parameterized Constructor.");
+    print(a + b);
+  }
+}
