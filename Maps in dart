@@ -1,0 +1,24 @@
+void main(){
+
+
+  var myMap = {
+    'Name':'Abhishek Shelar',
+    'Age':20,
+    'Branch':'Computer Engineering',
+    'Year':'Second Year',
+    'Pointer':9.7
+
+  };
+
+  myMap['Skill'] = 'Flutter'; //adding element in maps.
+
+
+  print(myMap.isNotEmpty);
+  print(myMap.isEmpty);
+  print(myMap.length);
+  print(myMap.keys);
+  print(myMap.values);
+  print(myMap.containsKey('Year'));
+  print(myMap.containsValue(9.6));
+
+}
