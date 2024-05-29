@@ -1,0 +1,89 @@
+import 'package:firstproject/main.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar:  AppBar(
+          backgroundColor: Colors.grey,
+          title: Text("MatchX",style: TextStyle(
+            fontSize: 40,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
+        body: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: RichText(text: TextSpan(
+                text: "Login Page",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold
+                )
+              )),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: 200,
+                color: Colors.amber,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(Icons.email_outlined,size: 30,),
+                          suffixIconColor: Colors.black,
+                          hintText: 'Enter Your Email',
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: TextField(
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          suffixIcon: Icon(Icons.password_outlined,size: 30,),
+                          hintText: 'Enter Your Password',
+                        ),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        ElevatedButton(onPressed: (){}, child: Text("Login",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),)),
+                        ElevatedButton(onPressed: (){}, child: Text("Register",style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Colors.black,
+                        ),)),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+
+        ),
+      )
+    );
+  }
+
+}
