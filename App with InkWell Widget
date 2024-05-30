@@ -1,0 +1,54 @@
+import 'package:firstproject/main.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+void myFun1(){
+  print('Single Tap');
+}
+void myFun2(){
+  print('Double Tap');
+}
+void myFun3(){
+  print('Long Press');
+}
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("WallPaper.AI",style: TextStyle(
+            color: Colors.black,
+            fontSize: 33,
+            fontWeight: FontWeight.bold,
+          ),),
+          backgroundColor: Colors.amber,
+        ),
+        body: Center(
+          child: InkWell(
+            onTap: myFun1,
+            onDoubleTap: myFun2,
+            onLongPress: myFun3,
+            child: Container(
+              height: 200,
+              width: 200,
+              color: Colors.red,
+              child: Center(child: Text("Click Me",style: TextStyle(
+                backgroundColor: Colors.black,
+                color: Colors.white,
+                fontSize: 30,
+              ),)),
+
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+}
