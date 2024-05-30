@@ -1,0 +1,42 @@
+import 'package:firstproject/test.dart';
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          title: Text("Welcome",style: mTextStyle20(),),  //using Theme and custom style.
+        ),
+      ),
+    );
+  }
+
+}
+
+
+/*
+
+
+
+
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+
+TextStyle mTextStyle20(){
+  return TextStyle(
+    fontSize: 50,
+    fontWeight: FontWeight.bold,
+    color: Colors.red,
+  );
+
+}
+ */
