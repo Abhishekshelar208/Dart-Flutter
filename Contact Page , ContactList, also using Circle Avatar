@@ -1,0 +1,142 @@
+import 'dart:math';
+
+import 'package:firstproject/main.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+var arrNames = [
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh',
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh',
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh'
+];
+
+
+
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          title: Center(
+            child: Text("Contacts",style: TextStyle(
+              color: Colors.black,
+              fontSize: 33,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
+        ),
+        body: ListView.separated(itemBuilder: (context,index){
+          return ListTile(
+            leading: Column(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.red,
+                  child: Text(arrNames[index][0],style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                ),
+              ],
+            ),
+            title: Text(arrNames[index],style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),),
+            subtitle: Text('Names'),
+            trailing: Icon(Icons.account_circle,size: 30,),
+          );
+        }, separatorBuilder: (context,index){
+          return Divider(height: 4,);
+        }, itemCount: arrNames.length)
+      ),
+    );
+  }
+
+}
+
+/*
+Function for generate random color for Background Images.
+
+backgroundColor: Colors.red,   // Replace this line with
+backgroundColor:_getRandomColor(), //This Line.
+
+
+final Random _random = Random();
+  Color _getRandomColor() {
+    return Color.fromARGB(
+      255,
+      _random.nextInt(256),
+      _random.nextInt(256),
+      _random.nextInt(256),
+    );
+  }
+ */
+
