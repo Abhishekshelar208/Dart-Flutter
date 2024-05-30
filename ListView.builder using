@@ -1,0 +1,110 @@
+import 'package:firstproject/main.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MyApp());
+}
+
+var arrNames = [
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh',
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh',
+  'Krishna',
+  'Abhishek',
+  'Vedant',
+  'Aarav',
+  'Vihaan',
+  'Aditya',
+  'Anaya',
+  'Ishaan',
+  'Kiara',
+  'Riya',
+  'Arjun',
+  'Aryan',
+  'Diya',
+  'Anvi',
+  'Ayaan',
+  'Saanvi',
+  'Kavya',
+  'Vivaan',
+  'Anaya',
+  'Maya',
+  'Reyansh'
+];
+
+
+class MyApp extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.amber,
+          title: Center(
+            child: Text("Design UI",style: TextStyle(
+              color: Colors.black,
+              fontSize: 33,
+              fontWeight: FontWeight.bold,
+            ),),
+          ),
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.builder(itemBuilder: (context,index){
+              return Text(arrNames[index],style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),);
+            },
+            itemCount: arrNames.length,
+              itemExtent: 50,
+            ),
+          ),
+        )
+      ),
+    );
+  }
+
+}
