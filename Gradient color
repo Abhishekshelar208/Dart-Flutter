@@ -1,0 +1,36 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: practice(),
+  ));
+}
+
+class practice extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+     appBar: AppBar(
+       backgroundColor: Colors.amber,
+       title: Text("Login UI",style: mTextStyle(),),
+     ),
+     body: Container(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+            colors: [
+              Color(0xff2af598),
+              Color(0xff009efd),
+            ],
+                begin: FractionalOffset(1.0,1.1),
+                end: FractionalOffset(0.0,0.1),
+          
+        )
+      ),
+     ),
+   );
+  }
+
+}
