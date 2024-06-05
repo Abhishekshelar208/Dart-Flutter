@@ -1,0 +1,49 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: designPage(),
+  ));
+}
+
+class designPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+   return Scaffold(
+     appBar: AppBar(
+       title: Text("PhoneCare",style: mTextStyle(),),
+       backgroundColor: Colors.green.shade700,
+     ),
+     body: Center(
+       child: Container(
+         child: ElevatedButton(
+           onLongPress: (){
+             print("Long Pressed...");
+           },
+
+             onPressed: (){
+           print("Button Clicked");
+         },
+             style: ElevatedButton.styleFrom(
+               backgroundColor: Colors.amber,
+               elevation: 0,
+               shape: RoundedRectangleBorder(
+                 borderRadius: BorderRadius.circular(5),
+               ),
+             ),
+
+             child: Text("Click Me",style: TextStyle(
+           fontSize: 30,
+           fontWeight: FontWeight.bold,
+           color: Colors.black,
+
+         ))),
+       ),
+     ),
+   );
+  }
+
+}
