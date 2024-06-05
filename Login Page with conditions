@@ -1,0 +1,303 @@
+import 'package:firstproject/ArtOptionPage.dart';
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: NewApp(),
+  ));
+}
+
+class NewApp extends StatefulWidget {
+  @override
+  _NewAppState createState() => _NewAppState();
+}
+
+class _NewAppState extends State<NewApp> {
+  int i = 0;
+  var email = TextEditingController();
+  var pass = TextEditingController();
+  bool showError = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        title: Text(
+          "MatchX",
+          style: mTextStyle(),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          height: 400,
+          width: 400,
+          child: Column(
+            children: [
+              Text(
+                "Login Page",
+                style: mTextStyle2(),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              TextField(
+                controller: email,
+                decoration: InputDecoration(
+                    hintText: "Enter Email id...",
+                    suffixIcon: Icon(Icons.email_outlined),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    )),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                controller: pass,
+                decoration: InputDecoration(
+                    hintText: "Enter Password...",
+                    suffixIcon: Icon(Icons.password_outlined),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.black,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue,
+                      ),
+                      borderRadius: BorderRadius.circular(12),
+                    )),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  String userEmail = email.text.toString();
+                  String userPass = pass.text.toString();
+
+                  if (userEmail == "Abhi" && userPass == "dmce") {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ArtOptionPage()));
+                  } else {
+                    setState(() {
+                      showError = true;
+                    });
+                  }
+                },
+                style: buttonPrimary,
+                child: Text(
+                  "Explore Now",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              if (showError)
+                Text(
+                  "Something Went Wrong...",
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+
+
+
+//new page code
+
+
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: ArtOptionPage(),
+  ));
+}
+class ArtOptionPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+            onTap: (){
+              Navigator.pop(context);
+            },
+            child: Icon(Icons.arrow_back, size: 35)),
+        title: Text(
+          "Art Choice",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 35,
+          ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          child: GridView.extent(
+            mainAxisSpacing: 10,
+            crossAxisSpacing: 10,
+            maxCrossAxisExtent: 200,
+
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                      fontSize: 25,
+                      fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+
+
+              ),
+              Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: Colors.red,
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.account_circle,size: 80,),
+                    Text("Choice1",style: TextStyle(
+                        fontSize: 25,
+                        fontFamily: 'myfonts4'
+                    )),
+                  ],
+                ),
+              ),
+
+
+
+            ],
+
+          ),
+        ),
+      ),
+
+    );
+  }
+
+}
