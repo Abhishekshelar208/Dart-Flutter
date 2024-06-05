@@ -1,0 +1,47 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: designPage(),
+  ));
+}
+
+class designPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "PhoneCare",
+          style: mTextStyle(),
+        ),
+        backgroundColor: Colors.green.shade700,
+      ),
+      body: Center(
+        child: InkWell(
+          onTap: () {
+            print("This is Image");
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.red,
+            ),
+            height: 300,
+            width: 300,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(
+                "assets/images/newlogo.png",
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
