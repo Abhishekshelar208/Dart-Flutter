@@ -1,0 +1,63 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: designPage(),
+  ));
+}
+
+class designPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        leading: IconButton(onPressed: (){}, icon: Icon(Icons.menu,size: 35,)),
+        backgroundColor: Colors.blue,
+        title: Text("PhoneCare",style: mTextStyle2(),),
+        actions: [
+
+          Icon(Icons.shopping_cart,size: 35,),
+          SizedBox(width: 10,),
+          Icon(Icons.search,size: 35,)
+        ],
+        elevation: 0,
+        centerTitle: true,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          height: 300,
+          width: 400,
+          child: RichText(text: TextSpan(
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.bold,
+              color: Colors.purple,
+            ),
+            children: [
+              TextSpan(text: "Hello "),
+              TextSpan(text: "World! ", style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 50,
+                color: Colors.blue,
+                fontFamily: 'myfonts',
+              )),
+              TextSpan(text: "Welcome",style: TextStyle(
+                fontFamily: 'myfonts6',
+                fontSize: 33,
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              )),
+            ]
+          )),
+        ),
+      ),
+    );
+  }
+}
