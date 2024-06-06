@@ -1,0 +1,43 @@
+import 'dart:async';
+
+import 'package:firstproject/Choice.dart';
+import 'package:firstproject/Login.dart';
+import 'package:firstproject/SomeNew.dart';
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: WelcomePage(),
+  ));
+}
+
+class WelcomePage extends StatefulWidget{
+  @override
+  State<WelcomePage> createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2),(){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ChoicePage()));
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          color: Colors.blueAccent,
+          child: Center(child: Text("PhoneCare",style: mTextStyle(),)),
+        ),
+      ),
+    );
+  }
+}
