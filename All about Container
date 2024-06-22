@@ -1,0 +1,88 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.deepPurple,
+      brightness: Brightness.light,
+    ),
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        title: Text(
+          "First App",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'myfonts',
+          ),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          height: 300,
+          width: 300,
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 20,
+                spreadRadius: 10,
+                color: Colors.amber,
+              ),
+            ],
+            border: Border.all(
+              width: 10,
+              color: Colors.red,
+            ),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  height: 140,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
+                  child: ClipOval(
+                    child: Image.asset(
+                      'assets/images/boy.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  "Welcome",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
