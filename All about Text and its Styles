@@ -1,0 +1,60 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.deepPurple,
+      brightness: Brightness.light,
+    ),
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.amber,
+        title: Text("Text & Style",style: mTextStyle(),),
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        child: Text("Hello This is Flutter Development Course, And I Just start working on it",style: TextStyle(
+          fontSize: 40,
+          fontWeight: FontWeight.bold,
+          letterSpacing: 3.0,
+          wordSpacing: 15,
+          foreground: Paint()
+            ..color = Colors.purple,
+          background: Paint()
+            ..style = PaintingStyle.stroke,
+
+          decoration: TextDecoration.combine([
+            TextDecoration.underline,
+            TextDecoration.overline,
+            TextDecoration.lineThrough,
+          ]),
+
+          decorationColor: Colors.red,
+          decorationStyle: TextDecorationStyle.dashed,
+
+          shadows: [
+            Shadow(color: Colors.grey,blurRadius: 8.0,offset: Offset(4, 1))
+          ]
+
+
+
+
+        ),),
+      ),
+    );
+
+  }
+}
