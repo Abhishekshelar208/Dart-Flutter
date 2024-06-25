@@ -1,0 +1,72 @@
+import 'dart:math';
+
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  List fruit = [
+    'apple','orange','santra','mango','kiwi','pineapple','watermelon','apple','orange','santra','mango','kiwi','pineapple','watermelon'
+  ];
+  Map fruit_names = {
+     'fruit':['apple','orange','santra','mango','kiwi','pineapple','watermelon','apple','orange','santra','mango','kiwi','pineapple','watermelon'],
+    'names':['Abhishek','Vedant','Om','Santosh','Ganesh','vijay','Balu','Abhishek','Vedant','Om','Santosh','Ganesh','vijay','Balu']
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("PhoneCare",style: mTextStyle(),)),
+        backgroundColor: Colors.amber,
+        elevation: 8,
+      ),
+      body: Center(
+        child: Container(
+          child: ElevatedButton(onPressed: (){
+            final snackBar = SnackBar(
+                backgroundColor: Colors.red,
+                elevation: 10,
+                duration: const Duration(milliseconds: 3000),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(200)
+                ),
+                behavior: SnackBarBehavior.floating,
+                action: SnackBarAction(label: "Undo", onPressed: (){}),
+
+
+
+                content: Center(child: Text("Plese Try Again Later...",style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),)));
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
+          },
+              style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(
+                  Colors.amber,
+                ),
+                shape: WidgetStatePropertyAll(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  )
+                ),
+              ),
+              child: Text("Show SanckBar",style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),)),
+        ),
+      )
+    );
+  }
+}
