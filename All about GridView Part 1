@@ -1,0 +1,126 @@
+import 'dart:math';
+
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  List fruit = [
+    'apple','orange','santra','mango','kiwi','pineapple','watermelon','apple','orange','santra','mango','kiwi','pineapple','watermelon'
+  ];
+  Map fruit_names = {
+     'fruit':['apple','orange','santra','mango','kiwi','pineapple','watermelon','apple','orange','santra','mango','kiwi','pineapple','watermelon'],
+    'names':['Abhishek','Vedant','Om','Santosh','Ganesh','vijay','Balu','Abhishek','Vedant','Om','Santosh','Ganesh','vijay','Balu']
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("PhoneCare",style: mTextStyle(),)),
+        backgroundColor: Colors.amber,
+        elevation: 8,
+      ),
+      body: GridView(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        mainAxisSpacing: 10,
+        crossAxisSpacing: 1,
+        childAspectRatio: 2/3,
+
+      ),
+      children: [
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+        Card(
+          color: Colors.red,
+          child: Container(
+            child: Center(child: Text("Abhi",style: mTextStyle(),)),
+          ),
+        ),
+      ],),
+    );
+  }
+}
