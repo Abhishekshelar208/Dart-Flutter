@@ -1,0 +1,322 @@
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(child: Text("PhoneCare",style: mTextStyle(),)),
+        backgroundColor: Colors.amber,
+        elevation: 8.0,
+
+      ),
+      body: Container(
+        child: ListView(
+          children: [
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text("Orange",style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                )),
+                minTileHeight: 80,
+                subtitle: Text("This is Fruit",style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 15,
+                ),),
+                leading: CircleAvatar(
+                  radius: 30,
+                  child: Image.asset('assets/images/boy.png'),
+                ),
+                trailing: Icon(Icons.access_alarm,size: 50,),
+              ),
+            ),
+
+
+          ],
+        ),
+      ),
+    );
+  }
+}
