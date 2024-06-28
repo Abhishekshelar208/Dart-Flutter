@@ -1,0 +1,131 @@
+import 'package:firstproject/Pages/home.dart';
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _selectedIndex = 0;
+
+  // Removed the `const` keyword from the list declaration
+  static final List<Widget> _pages = <Widget>[
+    HomePage(),
+    LikePage(),
+    SearchPage(),
+    SettingPage(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: _pages.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
+          child: GNav(
+            backgroundColor: Colors.black,
+            color: Colors.white,
+            activeColor: Colors.white,
+            tabBackgroundColor: Colors.grey.shade800,
+            gap: 8,
+            padding: EdgeInsets.all(16),
+            onTabChange: _onItemTapped,
+            tabs: const [
+              GButton(icon: Icons.home, text: "Home"),
+              GButton(icon: Icons.favorite_border, text: "Likes"),
+              GButton(icon: Icons.search, text: "Search"),
+              GButton(icon: Icons.settings, text: "Setting"),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.greenAccent,
+        child: Center(
+          child: Text('Home Page',style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+class LikePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.deepOrangeAccent,
+        child: Center(
+          child: Text('Likes Page',style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+class SearchPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.purple,
+        child: Center(
+          child: Text('Search Page',style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+class SettingPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.blue,
+        child: Center(
+          child: Text('Setting Page',style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
