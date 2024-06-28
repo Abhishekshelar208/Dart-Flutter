@@ -1,0 +1,190 @@
+//main.dart
+
+import 'package:firstproject/Pages/home.dart';
+import 'package:firstproject/Pages/like.dart';
+import 'package:firstproject/Pages/search.dart';
+import 'package:firstproject/Pages/setting.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _itemSelected = 0;
+
+  static final List<Widget> _pages = <Widget>[
+    HomePage(),
+    LikePage(),
+    SearchPage(),
+    SettingPage(),
+  ];
+
+  void _onTappedItem(int index){
+    setState(() {
+      _itemSelected = index;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _pages[_itemSelected],
+      bottomNavigationBar: Container(
+        color: Colors.black,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
+          child: GNav(
+            padding: EdgeInsets.all(15),
+              gap: 8,
+              backgroundColor: Colors.black,
+              activeColor: Colors.white,
+              color: Colors.white,
+              onTabChange: _onTappedItem,
+              tabBackgroundColor: Colors.grey.shade800,
+              tabs: const[
+            GButton(icon: Icons.home,text: "Home",),
+            GButton(icon: Icons.favorite_outline,text: "Likes",),
+            GButton(icon: Icons.search,text: "Search",),
+            GButton(icon: Icons.settings,text: "Setting",),
+          ]),
+        ),
+      ),
+    );
+  }
+}
+
+
+//home.dart
+
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: HomePage(),
+  ));
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.orange,
+        child: Center(
+          child: Text("HomePage",style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+//like.dart
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: LikePage(),
+  ));
+}
+
+class LikePage extends StatelessWidget {
+  const LikePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.lightGreenAccent,
+        child: Center(
+          child: Text("LikePage",style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+//search.dart
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SearchPage(),
+  ));
+}
+
+class SearchPage extends StatelessWidget {
+  const SearchPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.redAccent,
+        child: Center(
+          child: Text("SearchPage",style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+//setting.dart
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: SettingPage(),
+  ));
+}
+
+class SettingPage extends StatelessWidget {
+  const SettingPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.greenAccent,
+        child: Center(
+          child: Text("SettingPage",style: mTextStyle(),),
+        ),
+      ),
+    );
+  }
+}
+
+
