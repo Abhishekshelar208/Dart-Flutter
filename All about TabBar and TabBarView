@@ -1,0 +1,75 @@
+import 'package:firstproject/Pages/home.dart';
+import 'package:firstproject/Pages/like.dart';
+import 'package:firstproject/Pages/search.dart';
+import 'package:firstproject/Pages/setting.dart';
+import 'package:firstproject/ui_helper/util.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: TabItem(title: 'Abhi', count: 4,),
+  ));
+}
+
+class TabItem extends StatelessWidget {
+  final String title;
+  final int count;
+  const TabItem({
+    super.key,
+    required this.title,
+    required this.count,
+  });
+
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(length: 4, child: Scaffold(
+      appBar: AppBar(
+        title: Text("WhatsApp",style: mTextStyle(),),
+        backgroundColor: Colors.green,
+        bottom: TabBar(tabs: [
+          Tab(
+            icon: Icon(Icons.chat,color: Colors.black,),
+            text: "Chats",
+          ),
+          Tab(
+            icon: Icon(Icons.update,color: Colors.black,),
+            text: "Updates",
+          ),
+          Tab(
+            icon: Icon(Icons.commute,color: Colors.black,),
+            text: "Status",
+          ),
+          Tab(
+            icon: Icon(Icons.call,color: Colors.black,),
+            text: "Calls",
+          ),
+        ]),
+      ),
+      body: TabBarView(children: [
+        Container(
+          child: Center(
+            child: Text("Chats",style: mTextStyle(),),
+          )
+        ),
+        Container(
+            child: Center(
+              child: Text("Updates",style: mTextStyle(),),
+            )
+        ),
+        Container(
+            child: Center(
+              child: Text("Status",style: mTextStyle(),),
+            )
+        ),
+        Container(
+            child: Center(
+              child: Text("Calls",style: mTextStyle(),),
+            )
+        ),
+      ]),
+    ));
+  }
+}
