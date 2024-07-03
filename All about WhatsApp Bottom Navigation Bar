@@ -1,0 +1,118 @@
+import 'package:firstproject/Pages/home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+
+void main(){
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
+}
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentItemSelected = 0;
+
+  final List<Widget> _pages = <Widget>[
+    Page1(),
+    Page2(),
+    Page3(),
+    Page4(),
+  ];
+
+  void _isItemTapped(int index){
+    setState(() {
+      _currentItemSelected = index;
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      bottomNavigationBar: NavigationBar(
+        height: 75,
+        elevation: 0,
+        onDestinationSelected: _isItemTapped,
+        selectedIndex: _currentItemSelected,
+        destinations: [
+        NavigationDestination(icon: Icon(Icons.home), label: "Home"),
+        NavigationDestination(icon: Icon(Icons.store), label: "Shop"),
+        NavigationDestination(icon: Icon(Icons.favorite_outline), label: "Likes"),
+        NavigationDestination(icon: Icon(Icons.call), label: "Calls"),
+
+
+      ],
+
+      ),
+      body: _pages[_currentItemSelected]
+    );
+  }
+}
+
+class Page1 extends StatelessWidget {
+  const Page1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.amber,
+      ),
+    );
+  }
+}
+
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.deepOrangeAccent,
+      ),
+    );
+  }
+}
+
+class Page3 extends StatelessWidget {
+  const Page3({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.deepPurpleAccent,
+      ),
+    );
+  }
+}
+
+class Page4 extends StatelessWidget {
+  const Page4({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.lightBlueAccent,
+      ),
+    );
+  }
+}
+
+
+
