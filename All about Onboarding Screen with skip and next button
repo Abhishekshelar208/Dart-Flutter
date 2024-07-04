@@ -1,0 +1,141 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyOnBoardingApp(),
+  ));
+}
+
+class MyOnBoardingApp extends StatefulWidget {
+  const MyOnBoardingApp({super.key});
+
+  @override
+  State<MyOnBoardingApp> createState() => _MyOnBoardingAppState();
+}
+
+class _MyOnBoardingAppState extends State<MyOnBoardingApp> {
+  final PageController pageController = PageController();
+  String buttonText = "Skip";
+  int currentPageIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          PageView(
+            controller: pageController,
+            onPageChanged: (index) {
+              setState(() {
+                currentPageIndex = index;
+                buttonText = (index == 2) ? "Finish" : "Skip";
+              });
+            },
+            children: const [
+              OnboardingPage(
+                imagePath: 'assets/images/Delivery1.gif',
+                title: "Get Unlimited Hosting",
+                description: "To get unlimited Free hostings, you have to login yourself in our app.",
+              ),
+              OnboardingPage(
+                imagePath: 'assets/images/Delivery2.gif',
+                title: "Get Unlimited Chats",
+                description: "To get unlimited Free hostings, you have to login yourself in our app. To get unlimited Free hostings, you have to login yourself in our app.",
+              ),
+              OnboardingPage(
+                imagePath: 'assets/images/Delivery3.gif',
+                title: "Get Unlimited Hosting",
+                description: "To get unlimited Free hostings, you have to login yourself in our app.",
+              ),
+            ],
+          ),
+          Container(
+            alignment: Alignment.bottomCenter,
+            padding: const EdgeInsets.only(bottom: 100),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                currentPageIndex == 2
+                    ? const SizedBox()
+                    : GestureDetector(
+                  onTap: () {
+                    pageController.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeIn);
+                  },
+                  child: const Text("Next"),
+                ),
+                SmoothPageIndicator(
+                  controller: pageController,
+                  count: 3,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    if (currentPageIndex == 2) {
+                      // Finish button action
+                      // Navigate to another screen or do any desired action
+                    } else {
+                      // Skip button action
+                      pageController.animateToPage(2,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeIn);
+                    }
+                  },
+                  child: Text(buttonText),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class OnboardingPage extends StatelessWidget {
+  final String imagePath;
+  final String title;
+  final String description;
+
+  const OnboardingPage({
+    required this.imagePath,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        const SizedBox(
+          height: 100,
+        ),
+        Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Image.asset(imagePath),
+        ),
+        const SizedBox(
+          height: 20,
+        ),
+        Text(
+          title,
+          style: const TextStyle(
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'myfonts',
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text(
+            description,
+            textAlign: TextAlign.center,
+          ),
+        ),
+      ],
+    );
+  }
+}
