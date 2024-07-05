@@ -1,0 +1,123 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:introduction_screen/introduction_screen.dart';
+
+import 'login_page.dart';
+
+void main() {
+  WidgetsFlutterBinding.ensureInitialized(); // Ensure proper widget binding initialization
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: MyNewOnboardingScreen(),
+  ));
+}
+
+class MyNewOnboardingScreen extends StatefulWidget {
+  const MyNewOnboardingScreen({super.key});
+
+  @override
+  State<MyNewOnboardingScreen> createState() => _MyNewOnboardingScreenState();
+}
+
+class _MyNewOnboardingScreenState extends State<MyNewOnboardingScreen> {
+  @override
+
+  List<PageViewModel> getPages() {
+    return [
+      PageViewModel(
+        decoration: PageDecoration(
+          imageFlex: 2,
+        ),
+        image: Image.asset(
+          'assets/images/Delivery1.gif',
+          scale: 5,
+        ),
+        titleWidget: Text(
+          "Fresh Food",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'myfonts',
+          ),
+        ),
+        body: "We provide fast and fresh food in all over India, within 24 hours of Free Delivery.",
+      ),
+      PageViewModel(
+        decoration: PageDecoration(
+          imageFlex: 2,
+        ),
+        image: Image.asset(
+          'assets/images/Delivery2.gif',
+          scale: 3,
+        ),
+        titleWidget: Text(
+          "Fast Food",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'myfonts',
+          ),
+        ),
+        body: "We provide fast and fresh food in all over India, within 24 hours of Free Delivery.",
+      ),
+      PageViewModel(
+        decoration: PageDecoration(
+          imageFlex: 2,
+        ),
+        image: Image.asset(
+          'assets/images/Delivery3.gif',
+          scale: 3,
+        ),
+        titleWidget: Text(
+          "Ready Food",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+            fontFamily: 'myfonts',
+          ),
+        ),
+        body: "We provide fast and fresh food in all over India, within 24 hours of Free Delivery.",
+      ),
+    ];
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: IntroductionScreen(
+        curve: Curves.fastLinearToSlowEaseIn, // Smoother curve
+        showSkipButton: true,
+        skip: Text(
+          "Skip",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+        next: Icon(
+          Icons.navigate_next,
+          size: 30,
+        ),
+        done: Text(
+          "Finish",
+          style: TextStyle(fontSize: 20, color: Colors.black),
+        ),
+        dotsDecorator: DotsDecorator(
+          color: Colors.grey,
+          activeColor: Colors.black,
+          size: Size.square(10.0),
+          activeSize: Size(22.0, 10.0),
+          activeShape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24.0),
+          ),
+        ),
+        onDone: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => LoginPage(),
+            ),
+          );
+        },
+        pages: getPages(),
+      ),
+    );
+  }
+}
