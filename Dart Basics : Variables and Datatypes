@@ -1,0 +1,43 @@
+//All about Variables and Data-types in Dart
+
+void main(){
+
+  String firstname = "Abhishek";
+  String lastname = "Shelar";
+  int rollno = 65;
+  double percentage = 88.98;
+  List<String> hobbies = [
+    "Cricket",
+    "Swimming",
+    "Video Games",
+  ];
+
+  List<double> phoneno = [
+    9004512415,
+    9892533963,
+    9987946316,
+  ];
+
+  Map<String,dynamic> usernameandpassword = {
+    "abhishekshelar208": "Abhishek@1234",
+    "vedant@1212": 898988,
+    "omghadi1212": 4343,
+    "kavitashelar@2099":"Kavita@1234",
+  };
+
+
+  print("Student Details : ");
+  print("Student Name : ${firstname} ${lastname}");
+  print("Roll No : $rollno");
+  print("Percentage : $percentage");
+  print("Hobbies : $hobbies");
+  print("Contact Details : $phoneno");
+  print("Student Usernames : ${usernameandpassword.keys}");
+  print("Passwords : ${usernameandpassword.values}");
+  print("Username and Passwords : $usernameandpassword}");
+
+
+
+
+
+}
