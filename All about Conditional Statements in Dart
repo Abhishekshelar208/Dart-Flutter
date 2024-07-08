@@ -1,0 +1,39 @@
+void main(){
+
+ bool isLoggedIn = false;
+
+ int age = 20;
+
+ String status = age >= 18 ? 'Adult' : 'Minor';
+ print(status);
+
+
+ void checkStatus(){
+   isLoggedIn ? print("Welcome Back") : print("Please LogIn Yourself First");
+ }
+
+ checkStatus();
+
+
+ void isAdult(int i){
+   if(age>18){
+     print("Adult");
+   }else{
+     print("Minor");
+   }
+ }
+
+
+ void isAdult2(int i){
+   (age>18) ? print("Adult") : print("Minor");
+ }
+
+
+ isAdult(age);
+ isAdult2(age);
+
+
+
+
+
+}
