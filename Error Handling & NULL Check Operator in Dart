@@ -1,0 +1,28 @@
+//Error Handling & NULL Check Operator in Dart
+
+void main(){
+  Area area = Area();
+
+  area.calculateArea();
+}
+
+class Area {
+  double? width;
+  double? height;
+
+
+  void calculateArea(){
+    try{
+      if(width==null && height ==null){
+        print('width and height cannot be null');
+        width = 0;
+        height = 0;
+      }
+      double? totalArea = width! * height!;
+      print("Calculated Area : $totalArea");
+    }catch(e){
+      print(e);
+    }
+  }
+
+}
