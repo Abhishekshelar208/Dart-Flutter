@@ -1,0 +1,30 @@
+// Constructors in dart
+
+void main(){
+  List<Student> name = [
+    Student("Abhishek", 12),
+    Student("Vedant", 14),
+    Student("Om", 16),
+    Student("Kiran", 18),
+  ];
+
+
+  name.forEach((element){
+    print('Name : ${element.name} and Age : ${element.age}');
+  });
+}
+
+class Student {
+  String? name;
+  int? age;
+
+  Student(String newName, int newAge){
+    this.name = newName;
+    this.age = newAge;
+  }
+
+  void displayInfo(){
+    print('name : $name');
+    print('age : $age');
+  }
+}
