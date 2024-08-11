@@ -1,0 +1,23 @@
+// ?? operator.
+//if user not provide value then we can set default value using ?? operator.
+
+void main(){
+  Person person1 = Person();
+  person1.name = "Abhishek";
+  // person1.num1 = 30;
+  // person1.num2 = 20;
+  person1.Addition();
+}
+
+class Person {
+  String? name;
+  int? num1;
+  int? num2;
+
+
+  void Addition(){
+    int sum= num1 ?? 10 + (num2 ?? 22);  // in this line if user not gives any values then
+    // we set default value of num1 is 10 and num2 is 22;
+    print(sum);
+  }
+}
