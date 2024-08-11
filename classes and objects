@@ -1,0 +1,71 @@
+//classes and objects in dart
+
+void main(){
+  Student student1 = Student();
+  student1.name = "Abhishek Shelar";
+  student1.age = 21;
+  student1.studentId = 10112;
+  student1.rollNo = 67;
+  student1.grade = "B";
+  student1.displayInfo();
+  student1.updateName("Shelar Abhishek");
+  student1.updateAge(22);
+  student1.updateGrade('A+');
+  student1.updateRollno(65);
+
+
+
+
+  Student student2 = Student();
+  student2.name = "Vedant Shelar";
+  student2.studentId = 11212;
+  student2.grade = "A";
+  student2.rollNo = 21;
+  student2.age = 18;
+  student2.displayInfo();
+
+  student2.updateRollno(22);
+  student2.updateName("Shelar Vedant");
+  student2.updateAge(19);
+  student2.updateGrade('A+');
+}
+
+class Student {
+  String? name;
+  int? age;
+  int? studentId;
+  int? rollNo;
+  String? grade;
+
+  void displayInfo(){
+    print("Name is : $name");
+    print("Age is : $age");
+    print("Student ID is : $studentId");
+    print("rollNo is : $rollNo");
+    print("Grade is : $grade");
+  }
+
+  void updateName(String newName){
+    name = newName;
+    print("Updated Name is : $newName for StudentID : $studentId");
+  }
+
+  void updateAge(int newAge){
+    age = newAge;
+    print("Updated Age is : $newAge for StudentID : $studentId");
+  }
+
+  void updateRollno(int newRollno){
+    rollNo = newRollno;
+    print("Updated Rollno is : $newRollno for StudentID : $studentId");
+  }
+
+  void updateGrade(String newGrade){
+    grade = newGrade;
+    print("Updated Grade is : $newGrade for StudentID : $studentId");
+  }
+
+
+
+
+}
