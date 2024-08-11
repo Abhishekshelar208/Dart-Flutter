@@ -1,0 +1,33 @@
+// Constructors in dart part 3 and using of required keyword
+
+import 'dart:async';
+
+void main(){
+
+  // Student student = Student(name: "Abhishek", email: 'abhishekshelar208@gmail.com',);
+  // student.displayInfo();
+  List<Student> name = [
+    Student(email: 'Abhishekshelar209@gmail.com'),
+    Student(name: "Abhishek",email: 'Abhishekshelar209@gmail.com'),
+    Student(email: 'vedanthslear@gmail.com',name: "Vedant shelar"),
+    Student(email: 'kiranshelar@gmail.com',name: "Kiran Shelar"),
+  ];
+
+  name.forEach((element){
+    print('Name : ${element.name} and Age : ${element.email}');
+  });
+}
+
+class Student {
+  String? name;
+  String? email;
+
+  Student({this.name = '', required this.email}){
+    print('Constructor called');
+  }
+
+  void displayInfo(){
+    print('name : $name');
+    print('age : $email');
+  }
+}
