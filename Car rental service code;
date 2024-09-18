@@ -1,0 +1,54 @@
+//Car rental service code;
+
+import 'dart:io';
+
+class Vehical{
+  String? brand;
+  String? model;
+  int? year;
+
+
+  //Vehical(this.brand,this.model,this.year);
+
+  void displayInfo(){
+    print("Enter Brand Name:");
+    brand = stdin.readLineSync();
+    print("Enter Model Name:");
+    model = stdin.readLineSync();
+    print("Enter Car Year :");
+    year = int.parse(stdin.readLineSync()!);
+    print("Brand: $brand");
+    print("Model: $model");
+    print("Year: $year");
+
+  }
+}
+
+class Car extends Vehical{
+  int? door;
+  //Car(super.brand,super.model,super.year,this.door);
+
+
+  void CalculateFair(int days, int door){
+    print("Total Rent is: ${days * 5000 + door * 1000}");
+  }
+
+  @override
+  void displayInfo() {
+    // TODO: implement displayInfo
+    super.displayInfo();
+    print("Enter total no days:");
+    int? totaldays = int.parse(stdin.readLineSync()!);
+    print("Enter total no of Door");
+    int? totaldoor = int.parse(stdin.readLineSync()!);
+
+    print("Rent Calculated:" );
+    this.CalculateFair(totaldays,totaldoor);
+  }
+}
+
+
+void main(){
+  Car car = Car();
+  car.displayInfo();
+}
